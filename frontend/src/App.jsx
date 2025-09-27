@@ -68,6 +68,10 @@ const App = () => {
       setNotificationMessage(`Added ${newPerson.name}`, "success");
 
     })
+    .catch(error => {
+      console.log(error)
+      setNotificationMessage(`${error.response.data.error}`, "error");
+    })
 
     
   }
